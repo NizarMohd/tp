@@ -213,7 +213,7 @@ public class CalendarView {
                 checkYear(input[1]);
             } catch (Exception e) {
                 this.ui.printLine();
-                System.err.println(e.getMessage());
+                this.ui.printOut(e.getMessage(), true);
                 this.ui.printLine();
             }
         }
