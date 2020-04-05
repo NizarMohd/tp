@@ -49,10 +49,10 @@ public class CalendarView {
      * This constructs the class.
      * @param ui allows for interaction with the user.
      */
-    public CalendarView(Ui ui){
+    public CalendarView(Ui ui) {
         this.ui = ui;
         getInput();                                     // year and month will be set if user enters correctly.
-        if(this.year != -1 && this.month != -1) {       // check if year and month is set
+        if (this.year != -1 && this.month != -1) {       // check if year and month is set
             this.setFirstDay();
             this.setLastDay();
             processDates();
@@ -72,16 +72,14 @@ public class CalendarView {
      * This method sets the first day val. This prevent double error messages when user enters invalid command.
      */
     private void setFirstDay() {
-
-            this.firstDay = YearMonth.of(this.year, this.month).atDay(1);
-
+        this.firstDay = YearMonth.of(this.year, this.month).atDay(1);
     }
 
     /**
      * This method sets the last day val. This prevent double error messages when user enters invalid command.
      */
     private void setLastDay() {
-            this.lastDay = this.firstDay.getMonth().length(this.firstDay.isLeapYear());
+        this.lastDay = this.firstDay.getMonth().length(this.firstDay.isLeapYear());
     }
 
     /**
@@ -195,7 +193,7 @@ public class CalendarView {
             }
             this.month = inMonth;
         } catch (NumberFormatException e) {
-             throw new CalendarException(INVALID_MONTH);
+            throw new CalendarException(INVALID_MONTH);
         }
     }
 
