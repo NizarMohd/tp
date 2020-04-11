@@ -1,4 +1,4 @@
-[comment]: # (@@author NizarMohd)    
+[comment]: # (@@author NizarMohd)
 <!-- top button was extracted from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp -->
 <style>
 img {
@@ -7,11 +7,7 @@ img {
     margin-right: auto;
     width: auto;
 }
-div {
-    text-align: center;
-    font-size: x-small;
-}
-
+	
 #topButton {
   display: none; 
   position: fixed; 
@@ -20,16 +16,17 @@ div {
   z-index: 99; 
   border: none; 
   outline: none; 
-  background-color: darkblue; 
+  background-color: #0ED7D3; 
   color: white; 
   cursor: pointer; 
   padding: 15px; 
   border-radius: 10px; 
   font-size: 18px; 
+  text-alignment: center;
 }
 
 #topButton:hover {
-  background-color: #555;
+  background-color: #15E3DF;
 }
 </style>
 
@@ -37,9 +34,27 @@ div {
 
 <script src="../jsCodes/topButton.js"></script>
 
-<form action="https://ay1920s2-cs2113t-t12-3.github.io/tp/">
-    <input type="submit" value="Go back to main page" />
-</form>
+<style>
+a.backlink {
+	background-color: #0ED7D3;
+  color: white;
+  padding: 1em 1.5em;
+  position: relative;
+  text-decoration: none;
+}
+
+a.backlink:hover {
+  background-color: #15E3DF;
+  cursor: pointer;
+}
+
+a.backlink:active {
+  box-shadow: none;
+  top: 5px;
+}
+</style>
+
+<a href="https://ay1920s2-cs2113t-t12-3.github.io/tp/" class="backlink">Back to OrgaNice!'s main page</a>
 
 # Nizar Mohd - Project Portfolio Page
 
@@ -384,7 +399,7 @@ The purpose of the extract is to show my documentation capability.
   into text files when the User first run the software. Eventually, data will be referred from the created text file.   
   
 ![Study Area Component](../images/StudyAreaObjectDiagram.png) 
-<div>Figure 3. Class diagram for Study Area Component</div>
+<div class="this">Figure 3. Class diagram for Study Area Component</div>
 <br>
  The Study Area component contains 3 separate classes. They are as follows:  
   
@@ -431,19 +446,19 @@ Below would be a sequence diagram to demonstrate how the search algorithm is ope
  * `User enters search key` 
  
 ![Study Area Sequence_Diagram_Main](../images/usersLinteraction.png)  
-<div>Figure 9. Interaction between User and Study Area Search Interface</div>
+<div class="this">Figure 9. Interaction between User and Study Area Search Interface</div>
 <br>
 
  * `StudyAreaCommand invokes searchList() of StudyAreaList` 
  
 ![Study_Area_Sequence_Diagram_subModules](../images/sLinteraction.png)
-<div>Figure 10. Interaction within Study Area Search Interface</div>
+<div class="this">Figure 10. Interaction within Study Area Search Interface</div>
 <br>
 
 <a name="isAvail"></a>
 
 ![Study_Area_Sequence_Diagram_subModules2](../images/isAvailStudyArea.png)
-<div>Figure 11. Interaction when isAvailStudyArea is invoked</div>
+<div class="this">Figure 11. Interaction when isAvailStudyArea is invoked</div>
 <br>
 
 You can refer [here](https://ay1920s2-cs2113t-t12-3.github.io/tp/DeveloperGuide.html#appendix-d-glossary) for a detailed explanation on the terms used in this diagram
@@ -469,7 +484,7 @@ Depending on the type of attribute, the adjacency list can be implemented using 
 For example, let's take only the two study areas below as the entire data set.
 
 ![study_area_det](../images/studyAreaDet.PNG)
-<div>Figure 12. Sample Data</div>
+<div class="this">Figure 12. Sample Data</div>
 <br>
 
 This will result in the following adjacency lists : 
@@ -524,7 +539,7 @@ To edit a configuration, click `Run` then click on `Edit Configurations`. Procee
 Afterward, ensure that the configurations are as such:
 
 ![Junit_config](../images/JUnitConfiguration.PNG)
-<div>Figure 13. Configuring JUnit Tests</div>
+<div class="this">Figure 13. Configuring JUnit Tests</div>
 <br>
 
 To run all tests, right-click on the src/test/java folder and choose Run 'All in 'tp.tests'' with coverage
@@ -533,7 +548,7 @@ This allows for you to see which path has the test covered so that you can ensur
 Alternatively, you can click on this icon to run with coverage :
 
 ![JUnit_test](../images/JUnitRunTest.PNG)
-<div>Figure 14. Running JUnit Tests</div>
+<div class="this">Figure 14. Running JUnit Tests</div>
 <br>
 
 
@@ -544,7 +559,7 @@ To run a subset of tests, you can right-click on a test package, test class, or 
 Firstly ensure that the Gradle build has the following details: 
 
 ![Gradle_build](../images/gradleBuild.PNG)
-<div>Figure 15. Expected Gradle Build </div>
+<div class="this">Figure 15. Expected Gradle Build </div>
 <br>
 
 Next, to run using Gradle, you can click on the Gradle plugin icon at the left-hand side
@@ -552,12 +567,12 @@ Next, to run using Gradle, you can click on the Gradle plugin icon at the left-h
 Then click on the elephant icon (as seen below) and search for `Gradle test` then proceed to click on it.
 
 ![elephant_icon](../images/elephantIcon.PNG)
-<div>Figure 16. Gradle Icon</div>
+<div class="this">Figure 16. Gradle Icon</div>
 <br>
 
 Now the configuration is set to Gradle. Proceed to click the icon:
 
 ![Gradle_run_test](../images/gradleRunTest.PNG)
-<div>Figure 17. Running Gradle Test</div>
+<div class="this">Figure 17. Running Gradle Test</div>
 <br>
 
