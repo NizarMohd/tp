@@ -31,5 +31,7 @@ sC --> d : availStudyAreas
 deactivate sC
 
 d --> User : "Here is a list of available study areas"
+
+dummy change
 hide footbox
 @enduml
