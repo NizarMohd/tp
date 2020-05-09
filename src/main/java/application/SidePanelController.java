@@ -18,5 +18,4 @@ public class SidePanelController {
     @FXML
     private Button notesBtn;
 
-
 }
