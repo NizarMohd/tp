@@ -4,6 +4,8 @@ package seedu.duke;
 import command.Command;
 import command.StudyAreaCommand;
 import exception.IllegalStudyAreaException;
+import javafx.application.Application;
+import javafx.stage.Stage;
 import notes.NotesInvoker;
 import parser.Parser;
 import resourceloader.StudyAreaLoader;
@@ -24,7 +26,10 @@ import static ui.Constants.BYE_COMMAND;
 import static ui.Constants.NOTES_COMMAND;
 import static ui.Constants.STUDY_AREA_COMMAND;
 import static ui.Constants.SUCCESSFUL_UI_CREATION_LOGGER;
-
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 /**
  * This is Duke class, which forms the main class of the program.
@@ -59,6 +64,8 @@ public class Duke {
             ui.printLine();
         }
     }
+
+
 
     //@@author terrytay
     /**
