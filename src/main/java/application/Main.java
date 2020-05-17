@@ -1,5 +1,7 @@
 package application;
 
+import application.controller.DukeController;
+import application.controller.PopUpMessageController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,33 +12,27 @@ import java.util.Objects;
 
 public class Main extends Application {
 
-    static Stage currentStage;
-    static boolean isSplashLoaded = false;
-    static boolean isInitialised = false;
+    public static final String WELCOME = "Welcome to OrgaNice!";
+    public static final String LOGIN = "login.fxml";
+    public static Stage currentStage;
 
     @Override
     public void start(Stage stage) throws Exception {
         try {
-                Parent root = FXMLLoader.load(Objects.requireNonNull(DukeController.class.getClassLoader().getResource("login.fxml")));
+                Parent root = FXMLLoader.load(Objects.requireNonNull(DukeController.class.getClassLoader().getResource(LOGIN)));
                 Scene scene = new Scene(root);
-                stage.setTitle("Welcome to OrgaNice!");
+                stage.setTitle(WELCOME);
                 stage.setScene(scene);
                 stage.show();
                 currentStage = stage;
-                isInitialised = true;
-
         } catch (Exception e) {
-            e.printStackTrace();
+            PopUpMessageController.createExceptionMessage(e);
         }
     }
-
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    static void setIsSplashLoaded() {
-        isSplashLoaded = true;
-    }
 
 }

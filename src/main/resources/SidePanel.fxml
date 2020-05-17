@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox fx:id="Vbox" prefHeight="400.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SidePanelController">
+<VBox fx:id="Vbox" prefHeight="400.0" prefWidth="180.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.SidePanelController">
    <children>
       <SplitPane dividerPositions="0.3510531594784353" orientation="VERTICAL" prefHeight="410.0" prefWidth="195.0">
         <items>
@@ -32,36 +31,27 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <SplitPane dividerPositions="0.2646129541864139" layoutX="17.0" layoutY="14.0" orientation="VERTICAL" prefHeight="308.0" prefWidth="193.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <SplitPane dividerPositions="0.3464566929133858" layoutX="17.0" layoutY="14.0" orientation="VERTICAL" prefHeight="308.0" prefWidth="193.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="88.0" prefWidth="192.0">
                            <children>
-                              <Button fx:id="taskManagerBtn" layoutX="70.0" layoutY="14.0" mnemonicParsing="false" prefHeight="86.4" prefWidth="192.0" text="Task Manager" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                              <Button fx:id="taskManagerBtn" layoutX="70.0" layoutY="14.0" mnemonicParsing="false" onAction="#startTask" prefHeight="86.4" prefWidth="192.0" text="Task Manager" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                            </children>
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                            <children>
-                              <SplitPane dividerPositions="0.3626373626373626" layoutX="16.0" layoutY="-24.0" orientation="VERTICAL" prefHeight="132.8" prefWidth="192.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <SplitPane dividerPositions="0.5493827160493827" layoutX="16.0" layoutY="-24.0" orientation="VERTICAL" prefHeight="132.8" prefWidth="192.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                 <items>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                        <children>
-                                          <Button fx:id="studyAreaBtn" layoutX="69.0" layoutY="14.0" mnemonicParsing="false" prefHeight="83.2" prefWidth="190.4" text="Study Area" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <Button fx:id="calViewBtn" layoutX="69.0" layoutY="14.0" mnemonicParsing="false" onAction="#startCalendar" prefHeight="83.2" prefWidth="190.4" text="Calendar View" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                        </children>
                                     </AnchorPane>
                                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                                        <children>
-                                          <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="113.6" prefWidth="190.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                          <SplitPane orientation="VERTICAL" prefHeight="113.6" prefWidth="190.4" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <items>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                                   <children>
-                                                      <Button fx:id="notesBtn" mnemonicParsing="false" prefHeight="96.0" prefWidth="158.4" text="Notes" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                                   </children>
-                                                </AnchorPane>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                                   <children>
-                                                      <Button layoutX="69.0" layoutY="1.0" mnemonicParsing="false" prefHeight="52.8" prefWidth="188.8" text="Exit" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                                   </children>
-                                                </AnchorPane>
+                                                <Button fx:id="exitBtn" mnemonicParsing="false" onAction="#exit" prefHeight="113.0" prefWidth="174.0" text="Exit" />
                                             </items>
                                           </SplitPane>
                                        </children>

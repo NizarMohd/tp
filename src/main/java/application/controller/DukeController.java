@@ -1,5 +1,7 @@
-package application;
+package application.controller;
 
+import application.Main;
+import application.storage.Storage;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,14 +21,18 @@ import java.util.Objects;
 
 public class DukeController {
 
+    public static final String LOGIN_FAIL = "login fail";
+    public static final String RED = "red";
+    public static final String LOGIN_SUCCESS = "login success";
+    public static final String WELCOME_PAGE = "WelcomePage.fxml";
+    public static final String MAIN_PAGE = "MainPage.fxml";
     static Stage currentStage;
     public static final int SLEEP = 3;
     public static final int NULL_OPACITY = 0;
     public static final int FULL_OPACITY = 1;
     public static final int ONCE = 1;
-     static boolean isInitialised = false;
-    private static boolean isLoggedIn = false;
     static AnchorPane rootDrawer;
+
     @FXML
     private TextField txtUserName;
 
@@ -41,23 +47,23 @@ public class DukeController {
         boolean isPassword = txtPassword.getText().equals("password");
         if (isPassword && isUserName) {
             Main.currentStage.close();
-            lblStatus.setText("login success");
-            isLoggedIn = true;
+            lblStatus.setText(LOGIN_SUCCESS);
             try {
+                EventTableController.getEventObservableList().addAll(Storage.loadEvents());
+                DeadlineTableController.getDeadlineObservableList().addAll(Storage.loadDeadline());
                 loadSplashScreen();
             } catch (IOException e) {
-                e.printStackTrace();
+                PopUpMessageController.createExceptionMessage(e);
             }
         } else {
-            lblStatus.setText("login fail");
-            lblStatus.textFillProperty().setValue(Paint.valueOf("red"));
+            lblStatus.setText(LOGIN_FAIL);
+            lblStatus.textFillProperty().setValue(Paint.valueOf(RED));
         }
     }
 
     public static void loadSplashScreen() throws IOException {
         currentStage = new Stage();
-        Main.setIsSplashLoaded();
-        AnchorPane root = FXMLLoader.load(Objects.requireNonNull(DukeController.class.getClassLoader().getResource("WelcomePage.fxml")));
+        AnchorPane root = FXMLLoader.load(Objects.requireNonNull(DukeController.class.getClassLoader().getResource(WELCOME_PAGE)));
         Scene scene = new Scene(root, 400, 400);
         currentStage.setScene(scene);
         currentStage.show();
@@ -85,24 +91,17 @@ public class DukeController {
             try {
                 showMainPage();
             } catch (IOException ex) {
-                ex.printStackTrace();
+                PopUpMessageController.createExceptionMessage(ex);
             }
         });
     }
 
     public static void showMainPage() throws IOException {
         currentStage = new Stage();
-        System.out.println("load drawer");
-        rootDrawer = FXMLLoader.load(Objects.requireNonNull(NavigationDrawerController.class.getClassLoader().getResource("MainPage.fxml")));
+        rootDrawer = FXMLLoader.load(Objects.requireNonNull(NavigationDrawerController.class.getClassLoader().getResource(MAIN_PAGE)));
         Scene scene = new Scene(rootDrawer);
         currentStage.setScene(scene);
         currentStage.show();
     }
-
-    public void register(ActionEvent action) {
-
-
-    }
-
 
 }
